@@ -18,6 +18,7 @@ public class AddTest {
         MyArrayList<SomeType> myList = new MyArrayList<>(valuesToBePopulatedWith);
         MyCollectionInterface<SomeType> myCollection = (MyCollectionInterface<SomeType>) myList;
 
+
         for (SomeType someValue : valuesToBePopulatedWith) {
             // when
             myCollection.add(someValue);
