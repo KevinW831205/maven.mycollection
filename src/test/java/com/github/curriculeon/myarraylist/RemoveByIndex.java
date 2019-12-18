@@ -15,7 +15,7 @@ import java.util.Date;
 public class RemoveByIndex {
     //given
     private <SomeType> void test(int indexOfElementToRemove, SomeType[] valuesToBePopulatedWith, SomeType[] expectedElementSequence) {
-        MyArrayList<SomeType> myList = new MyArrayList<>(valuesToBePopulatedWith);
+        MyArrayList<SomeType> myList = new MyArrayList<>();
         MyCollectionInterface<SomeType> myCollection = (MyCollectionInterface<SomeType>) myList;
 
         // given elements have been added to collection
@@ -23,6 +23,7 @@ public class RemoveByIndex {
             myCollection.add(someValue);
             Boolean myCollectionContainsValue = myCollection.contains(someValue);
             Assert.assertTrue(myCollectionContainsValue);
+            System.out.println(myCollection);
         }
         Integer preRemoveLength = myCollection.size(); // get size of collection
         Integer expectedPreRemoveLength = valuesToBePopulatedWith.length;

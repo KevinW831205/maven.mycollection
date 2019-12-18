@@ -4,19 +4,27 @@ import java.util.*;
 import java.util.function.Consumer;
 
 public class MySet<SomeType> implements MyCollectionInterface{
-    Set<SomeType> mySet;
+    ArrayList<SomeType> mySet;
 
     public MySet() {
-        mySet = new HashSet<>();
+        mySet = new ArrayList<>();
     }
 
     public MySet(SomeType[] valuesToBePopulatedWith) {
-        mySet = new HashSet<>(Arrays.asList(valuesToBePopulatedWith));
+        mySet = new ArrayList<>();
+        for(SomeType i : valuesToBePopulatedWith){
+            if(!mySet.contains(i)){
+                mySet.add((SomeType) i);
+            }
+        }
+
     }
 
     @Override
     public void add(Object objectToAdd) {
-        mySet.add((SomeType) objectToAdd);
+        if(!mySet.contains(objectToAdd)){
+            mySet.add((SomeType) objectToAdd);
+        }
     }
 
     @Override
@@ -31,7 +39,7 @@ public class MySet<SomeType> implements MyCollectionInterface{
 
     @Override
     public Object get(int indexOfElement) {
-        return null;
+        return mySet.get(indexOfElement);
     }
 
     @Override
@@ -57,5 +65,12 @@ public class MySet<SomeType> implements MyCollectionInterface{
     @Override
     public Spliterator spliterator() {
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "MySet{" +
+                "mySet=" + mySet +
+                '}';
     }
 }

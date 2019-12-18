@@ -62,4 +62,11 @@ public class MyArrayList<SomeType> implements MyCollectionInterface {
     public Spliterator spliterator() {
         return null;
     }
+
+    @Override
+    public String toString() {
+        return "MyArrayList{" +
+                "myArrayList=" + myArrayList +
+                '}';
+    }
 }

@@ -20,6 +20,8 @@ public class GetTest {
         MySet<SomeType> myList = new MySet<>(valuesToBePopulatedWith);
         MyCollectionInterface<SomeType> myCollection = (MyCollectionInterface<SomeType>) myList;
 
+        System.out.println(myCollection.size());
+
         for (int currentIndex = 0; currentIndex < valuesToBePopulatedWith.length; currentIndex++) {
             SomeType expected = valuesToBePopulatedWith[currentIndex];
             myCollection.add(expected);
@@ -28,7 +30,10 @@ public class GetTest {
 
             // when
             SomeType actual = myCollection.get(currentIndex);
-
+            System.out.println(expected);
+            System.out.println(myCollection.get(0));
+            System.out.println(myCollection.get(1));
+            System.out.println(myCollection.get(2));
             // then
             Assert.assertEquals(expected, actual);
         }
@@ -46,6 +51,7 @@ public class GetTest {
 
     @Test
     public void test2() {
-        test(new Date(), new Date(), new Date());
+        test(new Object(), new Object(), new Object());
+
     }
 }
