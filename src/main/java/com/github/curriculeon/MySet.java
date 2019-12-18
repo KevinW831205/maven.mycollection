@@ -26,22 +26,22 @@ public class MySet<SomeType> implements MyCollectionInterface{
 
     @Override
     public void remove(int indexOfObjectToRemove) {
-        mySet.remove(indexOfObjectToRemove)
+        mySet.remove(indexOfObjectToRemove);
     }
 
     @Override
     public Object get(int indexOfElement) {
-        return mySet.get(indexOfElement);
+        return null;
     }
 
     @Override
     public Boolean contains(Object objectToCheckFor) {
-        return null;
+        return mySet.contains(objectToCheckFor);
     }
 
     @Override
     public Integer size() {
-        return null;
+        return mySet.size();
     }
 
     @Override
